@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Driver Fatigue Detection System Report</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      .content {
+        padding: 20px;
+        max-width: 800px;
+        margin: auto;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      h2,
+      h3 {
+        color: #333;
+      }
+      h1 {
+        border-bottom: 2px solid #eaeaea;
+        padding-bottom: 10px;
+      }
+      h2 {
+        border-bottom: 1px solid #eaeaea;
+        padding-bottom: 5px;
+      }
+      p {
+        text-align: justify;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
+      th {
+        background-color: #f8f8f8;
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        margin-top: 20px;
+        border-top: 1px solid #eaeaea;
+      }
+      a {
+        color: #333;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .important {
+        color: #d04a02;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h1>Driver Fatigue Detection System Report</h1>
+
+      <p>
+        <span class="important">Importance:</span> Accidents caused by driver
+        fatigue constitute a significant proportion of traffic accidents,
+        leading to the loss of thousands of lives, millions of hours in time,
+        and billions of dollars in financial losses each year, solely in the US.
+        This makes it a highly crucial issue.
+      </p>
+
+      <h2>Different Solutions</h2>
+      <p>
+        Various methods can minimize this problem, such as machine learning
+        models based on the car's path, monitoring the driver's pulse, or
+        tracking body symptoms using techniques like EEG. Among these, a system
+        employing Computer Vision for blink, yawn detection, and head estimation
+        is likely the most useful and effective, as it directly monitors the
+        driver's physical condition. It is highly cost-efficient since it only
+        requires a Raspberry Pi or Arduino-like system, a camera, and an alarm.
+      </p>
+
+      <h2>Methodology</h2>
+      <h3>Step 1: Detection of Person, Face, Eyes, and Mouth</h3>
+      <p>
+        To enhance the mentioned system, the first step would be to detect a
+        person using the camera, followed by identifying the person's face and
+        subsequently detecting their eyes and mouth. For this purpose, there is
+        an excellent machine learning library called dlib, written in C. With
+        dlib, it is possible to access real-time images of the left eye, right
+        eye, and mouth, facilitating the development of the desired features.
+      </p>
+
+      <h3>Step 2: Determination of Drowsiness</h3>
+      <p>
+        At this point, since we have images of the person's eyes and mouth,
+        efforts should be focused on how to determine whether the person is
+        drowsy from these images. The methods used here are as follows: 2.1)
+        Blink detection - the condition of the eyelids being closed for a
+        certain period 2.2) Yawn detection - the condition of the mouth being
+        open for an extended period 2.3) Head pose detection - measuring the
+        tilt of the head, which may indicate drowsiness if it is tilted to the
+        sides 2.4) Excessive yawning within a certain time frame, 2.5) Tracking
+        the blink rate over a certain period since the blink rate decreases in
+        sleepy individuals
+      </p>
+
+      <h3>Step 3: Measuring the Level of Fatigue</h3>
+      <p>
+        At this point, the next step should be measuring the level of fatigue in
+        the individual. Our system has four status levels: 3.1) The driver is
+        perfectly alert. 3.2) The driver shows signs of fatigue, having blinked
+        less than the normal rate or yawned more than usual within a certain
+        period. 3.3) The driver is in a drowsy state, having yawned for an
+        extended period or with eyes closed for a certain duration. 3.4) The
+        driver is dozing off, keeping their eyes closed for an extended period
+        or tilting their head to the sides. In such cases, an alarm will be
+        triggered.
+      </p>
+
+      <h3>Step 4: Determining Closed Eyes, Open Mouth, and Head Tilt</h3>
+      <p>
+        The most crucial part is how to determine if the eyes are closed, the
+        mouth is open, and the head is tilted to the sides. There are two
+        different methods for this: 4.1) The first method involves creating a
+        model using Transfer Learning and using this model to make decisions.
+        Kaggle datasets were utilized for this purpose, and MobileNet was chosen
+        as a lightweight Convolutional Neural Network (CNN). This allowed the
+        trained machine learning model to categorize in real-time using the
+        camera, detecting whether the eyes are closed, the mouth is open, or the
+        head is tilted. 4.2) Additionally, a model was developed that treats
+        every significant point on the face (a total of 68 points) as landmarks.
+        This model mathematically measures the distance between the eyes and
+        lips. According to this model, surpassing a certain threshold indicates
+        blinking or yawning, and further details can be accessed from the
+        report. Finally, the head pose is obtained by calculating the angle
+        between the eyes' centers, using these two points as a reference. In our
+        system, we aimed to enhance sensitivity by simultaneously using these
+        two models, thereby increasing the recall value.
+      </p>
+
+      <hr />
+      <h3>Additional Information</h3>
+      <footer>
+        <p>
+          Contact information:
+          <a href="mailto:[mertali@sabanciuniv.edu]"
+            >[mertali@sabanciuniv.edu]</a
+          >
+        </p>
+     
+          <a href="{{ url_for('home') }}" class="btn btn-link"
+            >Return to Dashboard</a
+          >
+      </footer>
+    </div>
+  </body>
+</html>

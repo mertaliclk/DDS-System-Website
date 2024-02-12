@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drowsiness Detection System</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ececec;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .video-container {
+            overflow: hidden;
+            /* Optional: Rounded corners */
+            border-radius: 8px;
+            /* Shadows for some depth */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            /* Optional: border */
+            border: 1px solid #ddd;
+            /* Ensures no overflow from the video */
+            background: #000;
+        }
+        video {
+            width: 750px;
+            height: 500px;
+            /* Responsive video */
+            max-width: 100%;
+            max-height: 100vh;
+            border: none; /* Remove default border */
+        }
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            video {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Drowsiness Detection System</h1>
+    <div class="video-container">
+        <!-- Embed your video here -->
+        <video controls>
+            <source src="{{ url_for('static', filename='videos/dds.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <a href="{{ url_for('home') }}" class="btn btn-link">Return to Dashboard</a>
+    </div>
+</body>
+</html>
