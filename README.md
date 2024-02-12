@@ -1,4 +1,4 @@
-# Drownsiness Detection System
+# Drowsiness Detection System
 The Drowsiness Detection System represents a pivotal advancement in driver safety technology, addressing the pervasive issue of driver fatigue-related accidents. By leveraging computer vision and machine learning techniques, the system accurately assesses the driver's alertness level in real-time, enabling timely intervention to prevent potential accidents. The incorporation of multiple detection methods and priority-based alerting ensures robust performance across varying degrees of drowsiness. Overall, the system's cost-effectiveness, coupled with its ability to function with minimal hardware requirements, makes it a practical solution for enhancing road safety.
 
 The project focuses on employing Convolutional Neural Networks (CNN) based Autoencoders
