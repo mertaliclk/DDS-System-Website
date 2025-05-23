@@ -4,7 +4,6 @@
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange)
 ![OpenCV](https://img.shields.io/badge/OpenCV-4.x-green)
 ![Flask](https://img.shields.io/badge/Flask-2.x-lightgrey)
-![License](https://img.shields.io/badge/License-MIT-green)
 
 A comprehensive driver safety system that combines computer vision-based drowsiness detection with ECG anomaly detection using deep learning techniques.
 
