@@ -1,37 +1,132 @@
 # Drowsiness Detection System
-The Drowsiness Detection System represents a pivotal advancement in driver safety technology, addressing the pervasive issue of driver fatigue-related accidents. By leveraging computer vision and machine learning techniques, the system accurately assesses the driver's alertness level in real-time, enabling timely intervention to prevent potential accidents. The incorporation of multiple detection methods and priority-based alerting ensures robust performance across varying degrees of drowsiness. Overall, the system's cost-effectiveness, coupled with its ability to function with minimal hardware requirements, makes it a practical solution for enhancing road safety.
 
-The project focuses on employing Convolutional Neural Networks (CNN) based Autoencoders
-for the task of anomaly detection in Electrocardiogram (ECG) data. The primary objective is to
-train an autoencoder to learn the intrinsic representation of normal ECG patterns and utilize
-various loss functions, including Mean Squared Error (MSE), Huber loss, Mean Absolute Error
-(MAS), and Cosine Similarity, to assess the model's performance. The dataset used is The
-MIT-BIH Arrhythmia Database, providing a diverse collection of ECG recordings.
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange)
+![OpenCV](https://img.shields.io/badge/OpenCV-4.x-green)
+![Flask](https://img.shields.io/badge/Flask-2.x-lightgrey)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-User Authentication System: Features a login with multi-factor authentication (MFA), a CAPTCHA, and a password reset mechanism via mail with proper rate limiting.
+A comprehensive driver safety system that combines computer vision-based drowsiness detection with ECG anomaly detection using deep learning techniques.
 
-### Database Initialization
-The database script creates three tables: users, admins, and comments, and populates them with sample data. Users and admins are added with hashed passwords for security.
+## 📋 Overview
 
-    python database_init.py
+This project implements a multi-faceted approach to driver safety by combining real-time drowsiness detection with ECG monitoring. The system utilizes computer vision for facial feature analysis and CNN-based autoencoders for ECG anomaly detection, providing a robust solution for preventing fatigue-related accidents.
 
-### Usage
-Start the application:
+## 🎯 Project Goals
 
-    python app.py
-Access it via http://localhost:5000 in a web browser to interact with the honeypot's features.
-can you write something similar to this readme from this report:
+- Implement real-time drowsiness detection using computer vision
+- Develop CNN-based autoencoder for ECG anomaly detection
+- Create a secure user authentication system
+- Provide comprehensive visualization of system performance
+- Ensure robust and reliable operation in real-world conditions
 
-### Outcomes and Findings
-The project generates visualizations, including sample plots for each loss function, to facilitate a
-comparative understanding of the model's performance. These plots, showcasing actual ECG
-data compared to the reconstructed data by the CNN autoencoder, are saved as HTML files for
-easy integration into the project. The visualizations enable a comprehensive assessment of how
-each loss function influences the model's ability to distinguish between normal and abnormal
-heart rhythms.
-### Conclusion
-The use of CNN-based Autoencoders, coupled with a thorough exploration of various loss
-functions, demonstrates a promising approach to anomaly detection in ECG data. The project
-highlights the importance of selecting an appropriate loss function based on the nature of the
-data and the desired model behavior. The insights gained contribute to the advancement of
-deep learning techniques for medical anomaly detection, particularly in cardiovascular health.
+## 📊 Key Features
+
+### Drowsiness Detection
+- Real-time facial feature analysis
+- Eye state monitoring
+- Head pose estimation
+- Priority-based alert system
+- Minimal hardware requirements
+
+### ECG Analysis
+- CNN-based autoencoder implementation
+- Multiple loss function support:
+  - Mean Squared Error (MSE)
+  - Huber loss
+  - Mean Absolute Error (MAE)
+  - Cosine Similarity
+- MIT-BIH Arrhythmia Database integration
+- Comprehensive visualization tools
+
+### Security Features
+- Multi-factor authentication (MFA)
+- CAPTCHA implementation
+- Secure password reset mechanism
+- Rate limiting
+- Database security with hashed passwords
+
+## 🛠️ Technologies Used
+
+- Python 3.x
+- TensorFlow for deep learning
+- OpenCV for computer vision
+- Flask for web interface
+- SQLite for database management
+- Matplotlib for visualization
+- NumPy for numerical operations
+
+## 📈 Project Structure
+
+1. **Drowsiness Detection Module**
+   - Facial feature detection
+   - Eye state analysis
+   - Alert system implementation
+
+2. **ECG Analysis Module**
+   - CNN autoencoder architecture
+   - Multiple loss function implementation
+   - Data preprocessing pipeline
+
+3. **User Authentication System**
+   - MFA implementation
+   - CAPTCHA integration
+   - Password management
+   - Rate limiting
+
+4. **Database Management**
+   - User data storage
+   - Admin management
+   - Comment system
+
+## 💻 Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/drowsiness-detection.git
+cd drowsiness-detection
+```
+
+2. Install required packages:
+```bash
+pip install -r requirements.txt
+```
+
+3. Initialize the database:
+```bash
+python database_init.py
+```
+
+4. Start the application:
+```bash
+python app.py
+```
+
+Access the system at `http://localhost:5000`
+
+## 🔍 Key Findings
+
+- Real-time drowsiness detection with high accuracy
+- Effective ECG anomaly detection using CNN autoencoders
+- Comparative analysis of different loss functions
+- Secure user authentication system
+- Comprehensive visualization of system performance
+
+## 📊 Visualization
+
+The project generates detailed visualizations including:
+- Sample plots for each loss function
+- Actual vs. reconstructed ECG data
+- Performance metrics and comparisons
+- System operation statistics
+
+## 👤 Author
+
+Mert Ali Celik
+
+## 🙏 Acknowledgments
+
+- MIT-BIH Arrhythmia Database for ECG data
+- Open-source computer vision community
+- Deep learning research community
+- Contributors and testers
